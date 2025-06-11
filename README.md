@@ -1,12 +1,12 @@
 자동차 연비 예측 AI 모델 개발
 Keras를 활용한 딥러닝 회귀 모델을 통해 자동차의 제원(엔진 크기, 마력 등)을 바탕으로 고속도로 연비(MPG)를 예측하는 프로젝트입니다.
-&lt;br>
-1. 문제 정의
+
+## 1. 문제 정의
 목표: 자동차의 다양한 성능 지표(feature)를 입력받아, 해당 차량의 고속도로 연비(MPG_Highway)를 예측합니다.
 모델 종류: 특정 값을 예측하는 회귀(Regression) 문제입니다.
 활용 기술: 딥러닝(Deep Learning) 신경망 모델을 Keras 라이브러리를 사용해 구축하고 학습시킵니다.
-&lt;br>
-2. 데이터 설명
+
+## 2. 데이터 설명
 데이터 출처: 
 kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-cars-dataset/data) 자료를 받아 일부 수정하여 CarDataSets.scv으로 저장 후 사용하였습니다.
 데이터 형태: 428개의 샘플과 8개의 컬럼으로 구성되어 있습니다.
@@ -14,8 +14,8 @@ kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-c
 EngineSize, Cylinders, HorsePower, MPG_City, Weight, Wheelbase, Length (총 7개)
 목표 데이터 (y): 모델이 예측해야 할 정답 값입니다.
 MPG_Highway
-&lt;br>
-3. 전처리 과정
+
+## 3. 전처리 과정
 정확하고 안정적인 모델 학습을 위해 다음과 같은 데이터 전처리 과정을 수행했습니다.
 
 3-1. 데이터 누수(Data Leakage) 방지:
@@ -31,7 +31,7 @@ MinMaxScaler를 사용하여 모든 특징(X)과 목표(y) 데이터의 범위�
 3-4. 데이터셋 분할:
 전체 데이터를 학습(Training) 데이터와 테스트(Test) 데이터로 7:3 비율로 분할하여 모델의 일반화 성능을 객관적으로 평가할 수 있도록 준비했습니다.
 
-하이퍼파라미터 최적화 결과
+## 4. 하이퍼파라미터 최적화 결과
 최적의 모델 성능을 찾기 위해 모델의 구조와 학습률(Learning Rate)을 변경하며 여러 테스트를 진행했습니다.
 
 | 테스트 | 모델 구조 (Dense Layers) | 학습률 (Learning Rate) | 테스트 MSE (Test MSE) |
@@ -40,7 +40,7 @@ MinMaxScaler를 사용하여 모든 특징(X)과 목표(y) 데이터의 범위�
 | Test 2 | `32 -> 16 -> 1` | 0.001 | 0.001366 |
 | Test 3 | `32 -> 16 -> 8 -> 1` | 0.001 | 0.001590 |
 
-5. 최종 하이퍼파라미터 및 옵션
+## 5. 최종 하이퍼파라미터 및 옵션
 위 테스트 결과를 바탕으로 최종 모델에 적용된 설정은 다음과 같습니다.
 
 최종 모델 구조:
@@ -56,7 +56,7 @@ Output Layer: Dense(1)
 EarlyStopping: 검증 손실(val_loss)이 20회 이상 개선되지 않으면 학습을 조기 종료하여 과적합을 방지합니다.
 ModelCheckpoint: 검증 손실이 가장 낮은 최적의 모델만 파일로 저장합니다.
 
-6. 최종 성능
+## 6. 최종 성능
 최종 Test MSE: 0.000907
 이 값은 0과 1 사이로 정규화된 데이터에 대한 오차이므로, 실제 연비(MPG) 단위로 변환하여 해석하면 다음과 같습니다.
 
