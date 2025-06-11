@@ -1,22 +1,20 @@
 자동차 연비 예측 AI 모델 개발
 Keras를 활용한 딥러닝 회귀 모델을 통해 자동차의 제원(엔진 크기, 마력 등)을 바탕으로 고속도로 연비(MPG)를 예측하는 프로젝트입니다.
-
+&lt;br>
 1. 문제 정의
 목표: 자동차의 다양한 성능 지표(feature)를 입력받아, 해당 차량의 고속도로 연비(MPG_Highway)를 예측합니다.
 모델 종류: 특정 값을 예측하는 회귀(Regression) 문제입니다.
 활용 기술: 딥러닝(Deep Learning) 신경망 모델을 Keras 라이브러리를 사용해 구축하고 학습시킵니다.
-
+&lt;br>
 2. 데이터 설명
 데이터 출처: 
-kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-cars-dataset/data) 에서 자료를 받아 자료의 내용을 수정하여 CarDataSets.scv으로 저장 후 사용하였습니다.
-데이터 형태: 428개의 샘플과 8개의 컬럼으로 구성
-
+kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-cars-dataset/data) 자료를 받아 일부 수정하여 CarDataSets.scv으로 저장 후 사용하였습니다.
+데이터 형태: 428개의 샘플과 8개의 컬럼으로 구성되어 있습니다.
 특징 데이터 (X): 모델 학습에 사용된 자동차 제원 정보입니다.
 EngineSize, Cylinders, HorsePower, MPG_City, Weight, Wheelbase, Length (총 7개)
-
 목표 데이터 (y): 모델이 예측해야 할 정답 값입니다.
 MPG_Highway
-
+&lt;br>
 3. 전처리 과정
 정확하고 안정적인 모델 학습을 위해 다음과 같은 데이터 전처리 과정을 수행했습니다.
 
