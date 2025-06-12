@@ -22,7 +22,7 @@ kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-c
 특징(X) 데이터셋에 목표 변수(y)인 `MPG_Highway`가 포함되지 않도록 분리했습니다.
 
 **3-2. 결측치 처리:**
-데이터에 존재할 수 있는 빈 값(NaN)이 모델 학습을 방해하지 않도록 `dropna()`를 통해 해당 행을 제거했습니다.https://github.com/KJSeung/CarMPGPrediction/blob/main/README.md
+데이터에 존재할 수 있는 빈 값(NaN)이 모델 학습을 방해하지 않도록 `dropna()`를 통해 해당 행을 제거했습니다.
 
 **3-3. 데이터 스케일링 (정규화):**
 `MinMaxScaler`를 사용하여 모든 특징(X)과 목표(y) 데이터의 범위를 **0과 1 사이로 조정**했습니다.
