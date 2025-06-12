@@ -9,9 +9,12 @@ Keras를 활용한 딥러닝 회귀 모델을 통해 자동차의 제원(엔진 
 ## 2. 데이터 설명
 **데이터 출처: **
 kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-cars-dataset/data) 자료를 받아 일부 수정하여 CarDataSets.scv으로 저장 후 사용하였습니다.<br>
+
 **데이터 형태:** 428개의 샘플과 8개의 컬럼으로 구성되어 있습니다.<br>
+
 **특징 데이터 (X):** 모델 학습에 사용된 자동차 제원 정보입니다.<br>
 `EngineSize`, `Cylinders`, `HorsePower`, `MPG_City`, `Weight`, `Wheelbase`, `Length` (총 7개)<br><br>
+
 **목표 데이터 (y):** 모델이 예측해야 할 정답 값입니다.<br>
 `MPG_Highway`
 
