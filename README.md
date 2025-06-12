@@ -22,7 +22,7 @@ kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-c
 특징(X) 데이터셋에 목표 변수(y)인 `MPG_Highway`가 포함되지 않도록 분리했습니다.
 
 **3-2. 결측치 처리:**
-데이터에 존재할 수 있는 빈 값(NaN)이 모델 학습을 방해하지 않도록 `dropna()`를 통해 해당 행을 제거했습니다.
+데이터에 존재할 수 있는 빈 값(NaN)이 모델 학습을 방해하지 않도록 `dropna()`를 통해 해당 행을 제거했습니다.https://github.com/KJSeung/CarMPGPrediction/blob/main/README.md
 
 **3-3. 데이터 스케일링 (정규화):**
 `MinMaxScaler`를 사용하여 모든 특징(X)과 목표(y) 데이터의 범위를 **0과 1 사이로 조정**했습니다.
@@ -57,10 +57,10 @@ kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-c
 `ModelCheckpoint`: 검증 손실이 가장 낮은 최적의 모델만 파일로 저장합니다.
 
 ## 6. 최종 성능
-**최종 Test MSE: 0.000907**
-이 값은 0과 1 사이로 정규화된 데이터에 대한 오차이므로, 실제 연비(MPG) 단위로 변환하여 해석하면 다음과 같습니다.
+**최종 Test MSE: 0.000907**<br>
+이 값은 0과 1 사이로 정규화된 데이터에 대한 오차이므로, 실제 연비(MPG) 단위로 변환하여 해석하면 다음과 같습니다.<br>
 
-**6-1 RMSE 계산: √0.000907 ≈ 0.0301**
+**6-1 RMSE 계산: √0.000907 ≈ 0.0301**<br>
 **6-2실제 연비(MPG) 오차로 변환:**
 데이터의 실제 MPG 범위를 약 30으로 가정했을 때, 평균 예측 오차는 **약 ±0.9 MPG** 입니다.<br>
 **결론: 최종 모델은 테스트 데이터셋에서 평균적으로 약 ±0.9 MPG의 매우 낮은 오차로 연비를 예측하는 우수한 성능을 보입니다.**
