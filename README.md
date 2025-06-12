@@ -47,15 +47,17 @@ kaggle의 [Large Cars Dataset](https://www.kaggle.com/datasets/makslypko/large-c
 위 테스트 결과를 바탕으로 최종 모델에 적용된 설정은 다음과 같습니다.
 
 최종 모델 구조:
-`Input Layer`: `Dense(16, activation='relu')`
-`Hidden Layer`: `Dense(8, activation='relu')`
-`Output Layer`: `Dense(1)`
-**옵티마이저 (Optimizer):** `Adam`
-**학습률 (Learning Rate):** `0.001`
-**손실 함수 (Loss Function):** `mse` (Mean Squared Error)
-**훈련 Epochs:** `2000`
-**배치 사이즈 (Batch Size):** `32`
-**콜백 함수 (Callbacks):**
+`Input Layer`: `Dense(16, activation='relu')`<br>
+`Hidden Layer`: `Dense(8, activation='relu')`<br>
+`Output Layer`: `Dense(1)`<br>
+
+**옵티마이저 (Optimizer):** `Adam`<br>
+**학습률 (Learning Rate):** `0.001`<br>
+**손실 함수 (Loss Function):** `mse` (Mean Squared Error)<br>
+**훈련 Epochs:** `2000`<br>
+**배치 사이즈 (Batch Size):** `32`<br>
+
+**콜백 함수 (Callbacks):**<br>
 `EarlyStopping`: 검증 손실(`val_loss`)이 20회 이상 개선되지 않으면 학습을 조기 종료하여 과적합을 방지합니다.<br>
 `ModelCheckpoint`: 검증 손실이 가장 낮은 최적의 모델만 파일로 저장합니다.
 
